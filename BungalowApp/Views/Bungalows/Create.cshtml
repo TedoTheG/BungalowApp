@@ -1,0 +1,63 @@
+﻿@model BungalowApp.Data.Bungalow
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bungalow</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BungalowId" class="control-label"></label>
+                <input asp-for="BungalowId" class="form-control" />
+                <span asp-validation-for="BungalowId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slots" class="control-label"></label>
+                <input asp-for="Slots" class="form-control" />
+                <span asp-validation-for="Slots" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Smokers" /> @Html.DisplayNameFor(model => model.Smokers)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Pets" /> @Html.DisplayNameFor(model => model.Pets)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricePerNight" class="control-label"></label>
+                <input asp-for="PricePerNight" class="form-control" />
+                <span asp-validation-for="PricePerNight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReservationListId" class="control-label"></label>
+                <input asp-for="ReservationListId" class="form-control" />
+                <span asp-validation-for="ReservationListId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
